@@ -1,0 +1,18 @@
+#nosotros{margin-bottom:96px}
+.story{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.story>*{min-width:0}
+.story-text h3{font-size:1.35rem;margin-bottom:14px}
+.story-text p{color:var(--ink-soft);margin-bottom:14px;max-width:62ch}
+.scene{width:100%;height:auto;display:block;border-radius:28px;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.mvo{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.mvo-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.mvo-card svg{width:44px;height:44px}
+.mvo-card h3{font-size:1.1rem}
+.mvo-card p{color:var(--ink-soft);font-size:.97rem}
+.contacto{margin-top:28px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:var(--bg-2);border:2px dashed var(--amarillo);border-radius:20px;padding:24px}
+.contacto>*{min-width:0}
+.contacto h3{font-size:1.2rem;margin-top:6px}
+.contacto p:not(.eyebrow){color:var(--ink-soft);margin-top:6px}
+.mail{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.mailaddr{font-family:var(--f-mono);font-weight:600;font-size:1.05rem;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--amarillo);overflow-wrap:anywhere}
+@media (max-width:900px){.story,.mvo,.contacto{grid-template-columns:1fr}}
