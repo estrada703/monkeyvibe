@@ -6,7 +6,7 @@
  * 2) Cada donación del Fondo Mono Verde se agrega a DONATIONS con su firma de transacción.
  */
 export const WALLETS = [
-  { id: 'fondo', role: 'fund', address: '' }, // Wallet exclusiva del Fondo Mono Verde
+  { id: 'fondo', role: 'fund', address: '7TDfr3qrR9PqUZ5Wv2iTE4pUWLPBzCBcAfjcMyq89Rfk' }, // Wallet exclusiva del Fondo Mono Verde
 ];
 
 export const DONATIONS = [
