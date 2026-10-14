@@ -226,6 +226,55 @@ footer strong{color:var(--ink)}
 @media (max-width:600px){.chart{height:380px}.live-grid b{font-size:1.05rem}.live{margin-bottom:72px}}
 @media (prefers-reduced-motion:reduce){.dot-live{animation:none}}
 @media (prefers-reduced-motion:reduce){.btn:hover{transform:none}}
+
+/* sobre nosotros + ilustraciones */
+.canopy{position:relative;height:150px;margin:0 -20px 40px;color:var(--verde)}
+.canopy-leaves{position:absolute;inset:0 0 auto 0;width:100%;height:110px;fill:var(--verde);opacity:.9}
+.canopy .hang{position:absolute;top:30px;left:72%;width:70px;height:130px;color:#5a3a1c;transform-origin:50% 0;animation:swing 4s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+#nosotros{margin-bottom:96px}
+.story{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.story>*{min-width:0}
+.story-text h3{font-size:1.35rem;margin-bottom:14px}
+.story-text p{color:var(--ink-soft);margin-bottom:14px;max-width:62ch}
+.scene{width:100%;height:auto;display:block;border-radius:28px;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.mvo{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.mvo-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.mvo-card svg{width:44px;height:44px}
+.mvo-card h3{font-size:1.1rem}
+.mvo-card p{color:var(--ink-soft);font-size:.97rem}
+.contacto{margin-top:28px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:var(--bg-2);border:2px dashed var(--amarillo);border-radius:20px;padding:24px}
+.contacto>*{min-width:0}
+.contacto h3{font-size:1.2rem;margin-top:6px}
+.contacto p:not(.eyebrow){color:var(--ink-soft);margin-top:6px}
+.mail{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.mailaddr{font-family:var(--f-mono);font-weight:600;font-size:1.05rem;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--amarillo);overflow-wrap:anywhere}
+.foot-mail a{color:var(--ink);font-weight:700}
+/* menú móvil */
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;align-items:center;justify-content:center;padding:0}
+.burger span,.burger span:before,.burger span:after{display:block;width:20px;height:2px;background:currentColor;border-radius:2px;position:relative;transition:transform .2s}
+.burger span:before,.burger span:after{content:"";position:absolute;left:0}
+.burger span:before{top:-6px}.burger span:after{top:6px}
+nav.open .burger span{background:transparent}
+nav.open .burger span:before{transform:translateY(6px) rotate(45deg)}
+nav.open .burger span:after{transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:900px){
+  .story{grid-template-columns:1fr}
+  .mvo{grid-template-columns:1fr}
+  .contacto{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  nav{display:flex;flex-wrap:nowrap;position:relative;gap:10px;padding-block:14px}
+  .brand{margin-right:auto}
+  .burger{display:inline-flex}
+  .navlinks{display:none;position:absolute;top:calc(100% - 4px);left:0;right:0;z-index:60;flex-direction:column;flex-wrap:nowrap;gap:0;margin:0;padding:8px;overflow:visible;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,.35);font-size:1rem}
+  nav.open .navlinks{display:flex}
+  .navlinks a{padding:13px 14px;border-bottom:1px solid var(--line);white-space:normal}
+  .navlinks a:last-child{border-bottom:0}
+  .canopy{height:120px;margin-inline:-16px}
+  .canopy .hang{left:68%;width:56px;height:104px}
+}
+@media (prefers-reduced-motion:reduce){.canopy .hang{animation:none}}
 </style>
 
 <div class="wrap">
@@ -241,8 +290,10 @@ footer strong{color:var(--ink)}
     <a href="#como">Cómo conseguirla</a>
     <a href="#comercios">Comercios</a>
     <a href="/cobrar.html">Cobrar</a>
+    <a href="#nosotros">Nosotros</a>
   </div>
   <button class="lang" id="lang" type="button" aria-label="Switch to English">EN</button>
+  <button class="burger" id="burger" type="button" aria-label="Menú" aria-expanded="false"><span></span></button>
 </nav>
 
 <header class="hero" id="top">
@@ -487,7 +538,7 @@ footer strong{color:var(--ink)}
     <div>
       <p class="eyebrow" style="color:inherit;opacity:.7">Para negocios</p>
       <h2>¿Tenés una soda, un tour o un hostal?</h2>
-      <p>Buscamos los primeros comercios aliados. Te ayudamos a crear tu wallet y tu QR de cobro, sin costo de instalación. Escribinos por nuestros canales cuando estén abiertos y te contactamos.</p>
+      <p>Buscamos los primeros comercios aliados. Te ayudamos a crear tu wallet y tu QR de cobro, sin costo de instalación. Escribinos a <a href="mailto:hello@monkeyvibecr.com" style="color:inherit;font-weight:700">hello@monkeyvibecr.com</a> y te contactamos.</p>
       <div class="cta"><a class="btn main" href="/cobrar.html" style="background:var(--gold);border-color:var(--gold);color:#10251F">Generar un cobro con QR →</a></div>
     </div>
     <div class="qr" aria-label="Ejemplo de recibo de cobro">
@@ -501,8 +552,112 @@ footer strong{color:var(--ink)}
   </div>
 </section>
 
+<div class="canopy" aria-hidden="true">
+<svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="canopy-leaves"><path d="M0 0 H1200 V40 Q1150 90 1100 52 Q1050 100 990 58 Q940 104 880 60 Q820 110 760 62 Q700 104 640 58 Q580 112 520 60 Q460 104 400 56 Q340 108 280 58 Q220 100 160 54 Q100 104 50 56 Q20 84 0 60 Z"/></svg>
+<svg viewBox="0 0 120 220" class="hang"><path d="M60 0 Q66 40 58 70" stroke="currentColor" stroke-width="4" fill="none"/>
+<path d="M58 70 Q40 74 44 90 Q48 102 60 96" stroke="#5a3a1c" stroke-width="7" fill="none" stroke-linecap="round"/>
+<ellipse cx="60" cy="132" rx="20" ry="28" fill="#5a3a1c"/><path d="M46 112 Q36 90 54 86 M74 112 Q84 92 66 86" stroke="#5a3a1c" stroke-width="8" fill="none" stroke-linecap="round"/>
+<circle cx="60" cy="170" r="17" fill="#5a3a1c"/><ellipse cx="60" cy="174" rx="11" ry="10" fill="#F2D3A6"/>
+<circle cx="56" cy="172" r="2" fill="#1a0f08"/><circle cx="64" cy="172" r="2" fill="#1a0f08"/>
+<path d="M56 179 Q60 182 64 179" stroke="#1a0f08" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+</div>
+<section id="nosotros">
+  <div class="sec-head">
+    <div>
+      <p class="eyebrow">Sobre nosotros</p>
+      <h2>Una moneda con alma de selva</h2>
+    </div>
+    <p>MonkeyVibe es un proyecto pequeño, hecho en Costa Rica, con una idea grande: que la tecnología también sirva para cuidar lo que hace único a este país.</p>
+  </div>
+  <div class="story">
+    <div class="story-text">
+      <h3>Cómo nació MonkeyVibe</h3>
+      <p>En Costa Rica es normal ver una tropa de monos cruzando por los cables de luz para llegar al otro lado de la calle. Es una escena linda, pero también peligrosa: muchos no lo logran.</p>
+      <p>Al mismo tiempo, miles de turistas y ticos pagan todos los días en sodas, tours y escuelas de surf, y muchos pequeños negocios todavía no tienen datáfono ni formas modernas de cobrar.</p>
+      <p>En octubre de 2026 juntamos esas dos ideas. Así nació MonkeyVibe: una moneda comunitaria sobre Solana para pagar con buena vibra, y Douglas, nuestro mono de lentes y corona, como su cara. Detrás de cada MVIBE hay una promesa simple: que una parte de lo que genera el proyecto ayude a construir puentes para que los monos crucen seguros.</p>
+    </div>
+    <div class="story-art"><svg class="scene" viewBox="0 0 600 440" role="img" aria-label="Ilustración: volcán, selva y un mono cruzando un puente de dosel en Costa Rica">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5B935"/><stop offset=".55" stop-color="#F0874C"/><stop offset="1" stop-color="#C8322A"/></linearGradient>
+<linearGradient id="vol" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3f4a"/><stop offset="1" stop-color="#173029"/></linearGradient>
+<clipPath id="sc"><rect width="600" height="440" rx="28"/></clipPath>
+</defs>
+<g clip-path="url(#sc)">
+<rect width="600" height="440" fill="url(#sky)"/>
+<circle cx="430" cy="150" r="62" fill="#FFF3D6" opacity=".9"/>
+<g fill="#FFF3D6" opacity=".55"><circle cx="300" cy="78" r="14"/><circle cx="318" cy="64" r="18"/><circle cx="340" cy="56" r="13"/></g>
+<path d="M150 300 L276 112 Q300 96 324 112 L460 300 Z" fill="url(#vol)"/>
+<path d="M276 112 Q300 100 324 112 L310 128 Q300 120 290 128 Z" fill="#C8322A" opacity=".7"/>
+<path d="M0 300 Q90 250 180 284 T360 276 T600 262 V440 H0 Z" fill="#1F5F43"/>
+<path d="M0 336 Q120 296 250 326 T480 314 T600 318 V440 H0 Z" fill="#17473A"/>
+<g fill="#0F2E25">
+<rect x="58" y="150" width="16" height="290"/><rect x="520" y="140" width="16" height="300"/>
+<circle cx="66" cy="150" r="54"/><circle cx="30" cy="180" r="38"/><circle cx="104" cy="182" r="40"/>
+<circle cx="528" cy="140" r="56"/><circle cx="490" cy="172" r="38"/><circle cx="570" cy="176" r="42"/>
+</g>
+<path d="M74 236 Q297 300 520 230" stroke="#F5B935" stroke-width="4" fill="none"/>
+<path d="M74 254 Q297 318 520 248" stroke="#F5B935" stroke-width="4" fill="none"/>
+<g stroke="#F5B935" stroke-width="2.5">
+<line x1="130" y1="252" x2="130" y2="269"/><line x1="185" y1="265" x2="185" y2="282"/><line x1="240" y1="273" x2="240" y2="290"/><line x1="297" y1="276" x2="297" y2="293"/><line x1="354" y1="273" x2="354" y2="290"/><line x1="409" y1="264" x2="409" y2="281"/><line x1="464" y1="250" x2="464" y2="267"/></g>
+<g transform="translate(300 222)">
+<path d="M-26 34 Q-60 30 -56 6 Q-52 -8 -40 0" stroke="#3b2414" stroke-width="7" fill="none" stroke-linecap="round"/>
+<ellipse cx="-6" cy="26" rx="26" ry="18" fill="#3b2414"/>
+<path d="M-22 38 L-28 54 M12 38 L18 54" stroke="#3b2414" stroke-width="8" stroke-linecap="round"/>
+<circle cx="22" cy="6" r="18" fill="#3b2414"/>
+<ellipse cx="25" cy="10" rx="11" ry="10" fill="#F2D3A6"/>
+<circle cx="21" cy="7" r="2.2" fill="#1a0f08"/><circle cx="29" cy="7" r="2.2" fill="#1a0f08"/>
+<path d="M21 14 Q25 17 29 14" stroke="#1a0f08" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<path d="M10 -6 L14 -16 L19 -9 L24 -18 L28 -9 L33 -15 L34 -4 Z" fill="#F5B935"/>
+</g>
+<g transform="translate(515 214)">
+<path d="M-26 0 H8" stroke="#0F2E25" stroke-width="6"/>
+<ellipse cx="0" cy="-16" rx="13" ry="18" fill="#111"/>
+<circle cx="4" cy="-32" r="9" fill="#111"/>
+<path d="M10 -36 Q40 -38 44 -28 Q30 -24 10 -26 Z" fill="#F0874C"/><path d="M10 -36 Q30 -38 38 -33" stroke="#F5B935" stroke-width="3" fill="none"/>
+<circle cx="6" cy="-34" r="2" fill="#5B9BE8"/><ellipse cx="2" cy="-18" rx="6" ry="8" fill="#FFF3D6"/>
+</g>
+<g fill="#0B231C">
+<path d="M-10 440 Q20 360 70 380 Q50 400 60 440 Z"/><path d="M30 440 Q70 340 130 360 Q100 390 110 440 Z"/>
+<path d="M610 440 Q580 352 520 372 Q545 398 535 440 Z"/><path d="M570 440 Q520 360 470 390 Q495 410 492 440 Z"/>
+</g>
+</g>
+</svg></div>
+  </div>
+  <div class="mvo">
+    <article class="mvo-card">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--amarillo)" stroke-width="3"/><circle cx="24" cy="24" r="11" fill="none" stroke="var(--amarillo)" stroke-width="3"/><circle cx="24" cy="24" r="3.5" fill="var(--rojo)"/></svg>
+      <h3>Misión</h3>
+      <p>Que pagar con cripto en Costa Rica sea tan fácil como un SINPE, y que cada pago deje algo bueno para la fauna y los negocios locales.</p>
+    </article>
+    <article class="mvo-card">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40 L20 14 L28 28 L34 20 L42 40 Z" fill="none" stroke="var(--verde)" stroke-width="3" stroke-linejoin="round"/><circle cx="36" cy="11" r="5" fill="var(--amarillo)"/></svg>
+      <h3>Objetivo</h3>
+      <p>Para 2027, tener comercios aliados cobrando con MVIBE, guías de tours locales en la red y la primera donación pública del Fondo Mono Verde.</p>
+    </article>
+    <article class="mvo-card">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40 C10 30 6 22 10 15 C14 8 22 10 24 16 C26 10 34 8 38 15 C42 22 38 30 24 40 Z" fill="none" stroke="var(--rojo)" stroke-width="3" stroke-linejoin="round"/></svg>
+      <h3>Valores</h3>
+      <p>Transparencia en cada movimiento, comunidad antes que especulación, y mucha Pura Vida.</p>
+    </article>
+  </div>
+  <div class="contacto">
+    <div>
+      <p class="eyebrow">Contacto</p>
+      <h3>¿Querés sumarte, aliarte o preguntar algo?</h3>
+      <p>Escribinos y te respondemos con gusto.</p>
+    </div>
+    <div class="mail">
+      <a class="mailaddr" href="mailto:hello@monkeyvibecr.com">hello@monkeyvibecr.com</a>
+      <button class="btn" type="button" id="copymail">Copiar correo</button>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="canopy" aria-hidden="true" style="margin-bottom:0"><svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="canopy-leaves"><path d="M0 0 H1200 V40 Q1150 90 1100 52 Q1050 100 990 58 Q940 104 880 60 Q820 110 760 62 Q700 104 640 58 Q580 112 520 60 Q460 104 400 56 Q340 108 280 58 Q220 100 160 54 Q100 104 50 56 Q20 84 0 60 Z"/></svg></div>
 <footer>
-  <div><strong>MonkeyVibe ($MVIBE)</strong><br>Hecho en Costa Rica, con café y paciencia. Pura vida.</div>
+  <div><strong>MonkeyVibe ($MVIBE)</strong><br>Hecho en Costa Rica, con café y paciencia. Pura vida.<br><span class="foot-mail">Contacto: <a href="mailto:hello@monkeyvibecr.com">hello@monkeyvibecr.com</a></span></div>
   <div>MVIBE es un token meme comunitario. No representa acciones ni derecho a ganancias, y su precio puede subir o bajar a cero. Esto no es asesoría financiera.</div>
   <div class="credit">Elaborado por <a href="https://cloudmonkeycr.com" target="_blank" rel="noopener">cloudmonkeycr.com</a> · 2026</div>
 </footer>
@@ -555,7 +710,7 @@ footer strong{color:var(--ink)}
 
 <script>
 (function(){
-  const EN={"En vivo": "Live", "Precio de MVIBE ahora": "MVIBE price now", "Cargando datos…": "Loading data…", "Precio": "Price", "Cambio 24 h": "24h change", "Capitalización": "Market cap", "Volumen 24 h": "24h volume", "El precio cambia minuto a minuto y puede bajar tanto como subir. Esto no es asesoría financiera. Datos de": "The price changes by the minute and can fall as well as rise. This is not financial advice. Data from", "Dónde pagar": "Where to pay", "Ruta": "Roadmap", "Cómo conseguirla": "How to get it", "Comercios": "Businesses", "$MVIBE · token comunitario en Solana": "$MVIBE · community token on Solana", "Plata con vibra de selva.": "Money with jungle vibes.", "MonkeyVibe nace en Costa Rica para pagar el cafecito, el tour y la tabla de surf con una moneda que se mueve tan rápido como un mono congo entre los árboles.": "MonkeyVibe was born in Costa Rica to pay for your coffee, your tour and your surfboard with a coin that moves as fast as a howler monkey through the treetops.", "Conseguir MVIBE →": "Get MVIBE →", "Ver dónde se usará": "See where it will work", "Contrato:": "Contract:", "Ver en pump.fun ↗": "View on pump.fun ↗", "Copiar": "Copy", "Red": "Network", "Símbolo": "Ticker", "Suministro": "Supply", "1.000.000.000": "1,000,000,000", "Lanzamiento": "Launch", "Proyectos en camino": "Projects on the way", "Dónde vas a poder pagar con MVIBE": "Where you will be able to pay with MVIBE", "Estos son los usos que estamos armando. Cada tarjeta dice en qué etapa va, sin adornos: lo que está en conversación todavía no es un hecho.": "These are the uses we are building. Each card shows its real stage: anything still in talks is not a done deal.", "En conversaciones": "In talks", "Sodas y cafeterías aliadas": "Partner sodas and cafés", "Pagar el casado o el café chorreado escaneando un código QR con Phantom. El comercio recibe al instante.": "Pay for a casado (the classic Tico lunch plate) or a pour-over coffee by scanning a QR code with Phantom. The shop gets paid instantly.", "Ej: casado + fresco · 9.500 MVIBE*": "E.g. casado + fresh juice · 9,500 MVIBE*", "En diseño": "In design", "Tours para ver monos": "Monkey-watching tours", "Guías locales en zonas como Manuel Antonio, Cahuita y Tortuguero cobrando tours de avistamiento en MVIBE, con descuento para holders.": "Local guides in places like Manuel Antonio, Cahuita and Tortuguero charging for wildlife tours in MVIBE, with discounts for holders.", "Meta: 3 guías piloto en el primer año": "Goal: 3 pilot guides in year one", "Surf y hospedaje": "Surf and stays", "Hostales y escuelas de surf en la costa del Pacífico aceptando MVIBE para clases, alquiler de tablas y noches.": "Hostels and surf schools on the Pacific coast accepting MVIBE for lessons, board rentals and nights.", "Zonas: Santa Teresa · Nosara · Dominical": "Areas: Santa Teresa · Nosara · Dominical", "Tienda MonkeyVibe": "MonkeyVibe Shop", "Camisetas, stickers y gorras con arte de carreta y monos, que solo se compran con MVIBE. Hechas por artistas ticos.": "T-shirts, stickers and caps with oxcart art and monkeys, sold only for MVIBE. Made by Costa Rican artists.", "Primer drop: 100 camisetas numeradas": "First drop: 100 numbered tees", "Cobro fácil para negocios": "Easy payments for businesses", "Una app sencilla para que cualquier pulpería o feria genere su QR de cobro en MVIBE, basada en Solana Pay. Sin terminal, solo el celular.": "A simple app so any corner store or farmers market can create its own MVIBE payment QR, built on Solana Pay. No terminal, just a phone.", "Comisión de red: fracciones de centavo": "Network fee: fractions of a cent", "Compromiso": "Commitment", "Fondo Mono Verde": "Green Monkey Fund", "Parte de las comisiones de creador irá a proyectos que instalan puentes de dosel para que los monos crucen calles y cables sin peligro. La organización aliada se anunciará públicamente.": "Part of the creator fees will go to projects that build canopy bridges so monkeys can cross roads and power lines safely. The partner organization will be announced publicly.", "Cada aporte se publica con su transacción": "Every donation is published with its transaction", "*Montos ilustrativos. El precio real de MVIBE lo define el mercado y puede cambiar mucho.": "*Illustrative amounts. The real price of MVIBE is set by the market and can change a lot.", "Hoja de ruta": "Roadmap", "El sendero, paso a paso": "The trail, step by step", "Fechas estimadas. Avanzamos al siguiente tramo cuando el anterior funciona de verdad, no antes.": "Estimated dates. We move to the next stretch only when the previous one truly works.", "MVIBE sale en pump.fun sobre Solana": "MVIBE launches on pump.fun on Solana", "Logo y nombre visibles en Phantom": "Logo and name visible in Phantom", "Tropa": "Troop", "Concursos de memes y arte de carreta": "Meme and oxcart-art contests", "Primer drop de la tienda MonkeyVibe": "First MonkeyVibe Shop drop", "Anuncio de la organización del Fondo Mono Verde": "Green Monkey Fund partner announced", "Primeros comercios": "First businesses", "Piloto con sodas y cafeterías aliadas": "Pilot with partner sodas and cafés", "Tours de avistamiento con guías locales": "Wildlife tours with local guides", "2027 en adelante": "2027 and beyond", "Cobro para todos": "Payments for everyone", "App de cobro con QR para pequeños negocios": "QR payment app for small businesses", "Expansión a surf y hospedaje en la costa": "Expansion to surf and coastal stays", "Todo desde el celular. Nadie del equipo te va a pedir tu frase secreta, nunca.": "All from your phone. Nobody on the team will ever ask for your secret phrase.", "Instalá Phantom": "Install Phantom", "Creá la wallet y guardá tus 12 palabras en papel, lejos del celular.": "Create your wallet and write your 12 words on paper, away from your phone.", "Cargá SOL": "Add SOL", "Verificá siempre la dirección del contrato en esta página o en nuestros canales oficiales. Hay copias falsas de casi cualquier token.": "Always check the contract address on this page or our official channels. Fake copies exist for almost every token.", "Para negocios": "For businesses", "¿Tenés una soda, un tour o un hostal?": "Run a soda, a tour or a hostel?", "Buscamos los primeros comercios aliados. Te ayudamos a crear tu wallet y tu QR de cobro, sin costo de instalación. Escribinos por nuestros canales cuando estén abiertos y te contactamos.": "We are looking for our first partner businesses. We will help you set up your wallet and payment QR at no setup cost. Message us on our channels once they open and we will get back to you.", "Ejemplo de cobro": "Sample payment", "Mesa 4": "Table 4", "Casado de pollo": "Chicken casado", "Fresco de cas": "Cas fruit juice", "9.500 MVIBE": "9,500 MVIBE", "Recibo ilustrativo de cómo se verá un cobro.": "Illustrative receipt of what a payment will look like.", "Hecho en Costa Rica, con café y paciencia. Pura vida.": "Made in Costa Rica with coffee and patience. Pura vida.", "MVIBE es un token meme comunitario. No representa acciones ni derecho a ganancias, y su precio puede subir o bajar a cero. Esto no es asesoría financiera.": "MVIBE is a community meme token. It is not equity and gives no right to profits, and its price can rise or fall to zero. This is not financial advice.", "Copiado": "Copied", "Cuatro pasos y ya tenés MVIBE": "Four steps and you own MVIBE", "Abrí Swap": "Open Swap", "En Phantom tocá Swap, pegá el contrato oficial de MVIBE y elegí cuánto SOL cambiar.": "In Phantom tap Swap, paste the official MVIBE contract and choose how much SOL to swap.", "Confirmá": "Confirm", "Revisá el monto, confirmá y MVIBE aparece en tu Phantom en segundos.": "Check the amount, confirm, and MVIBE shows up in your Phantom in seconds.", "Comprar con Phantom →": "Buy with Phantom →", "Cómo comprar": "How to buy", "Atajo": "Shortcut", "Comprá en un toque": "Buy in one tap", "Desde el celular, este botón abre Phantom directo en la página de MVIBE. Desde la computadora, escaneá el código con la cámara del celular.": "On your phone, this button opens Phantom right on the MVIBE page. On a computer, scan the code with your phone camera.", "Abrir en Phantom": "Open in Phantom", "Copiar contrato": "Copy contract", "Descargar QR": "Download QR", "Canales de comunidad en redes sociales": "Community channels on social media", "Elaborado por": "Made by", "En Phantom tocá Comprar y pagá con tarjeta. En Costa Rica también podés usar": "In Phantom tap Buy and pay by card. In Costa Rica you can also use", "con SINPE Móvil.": "with SINPE Móvil.", "Comprar con Binance Wallet ↗": "Buy with Binance Wallet ↗", "¿Ya usás Binance? En la app entrá a": "Already on Binance? In the app open", "Binance Wallet": "Binance Wallet", ", pegá el contrato de MVIBE en el buscador y comprá directo. Verificá que el contrato termine en": ", paste the MVIBE contract in the search bar and buy directly. Check that the contract ends in", "Cobrar": "Get paid", "Generar un cobro con QR →": "Create a QR payment request →", "Gastá tu MVIBE": "Spend your MVIBE", "Pagá con tarjeta donde aceptan Visa": "Pay by card wherever Visa is accepted", "Ninguna tarjeta gasta MVIBE directo todavía. Lo cambiás a USDC y recargás una tarjeta cripto virtual.": "No card spends MVIBE directly yet. Swap it to USDC and top up a virtual crypto card.", "Cambiá a USDC": "Swap to USDC", "En tu wallet tocá Swap y cambiá MVIBE por USDC en la red Solana.": "In your wallet tap Swap and change MVIBE to USDC on the Solana network.", "Abrí tu tarjeta": "Open your card", "Creá una tarjeta virtual en una app cripto disponible en Costa Rica, como": "Create a virtual card in a crypto app available in Costa Rica, such as", "o": "or", "Recargá": "Top up", "Enviá USDC desde tu wallet a la dirección de depósito de la tarjeta, siempre por la red Solana.": "Send USDC from your wallet to the card deposit address, always on the Solana network.", "Pagá": "Pay", "Agregala a Apple Pay o Google Pay y pagá con el celular.": "Add it to Apple Pay or Google Pay and pay with your phone.", "Las tarjetas son de empresas externas a MonkeyVibe: revisá disponibilidad, comisiones y requisitos en cada app. Probá primero con un monto pequeño.": "Cards are offered by companies outside MonkeyVibe: check availability, fees and requirements in each app. Try a small amount first.", "Comprar": "Buy", "Comprar MVIBE aquí →": "Buy MVIBE here →", "Compra directa": "Direct purchase", "Comprá MVIBE aquí mismo": "Buy MVIBE right here", "Conectá tu wallet, elegí cuánto SOL usar y listo. La compra se hace directo desde tu wallet: esta página nunca guarda tu dinero.": "Connect your wallet, choose how much SOL to use and you are done. The purchase happens straight from your wallet: this page never holds your money.", "Conectá tu wallet": "Connect your wallet", "Phantom, Solflare u otra wallet de Solana. Desde el celular, abrí esta página dentro del navegador de tu wallet.": "Phantom, Solflare or another Solana wallet. On your phone, open this page inside your wallet browser.", "Escribí cuánto SOL usar": "Enter how much SOL to use", "El widget te muestra al instante cuántos MVIBE recibís.": "The widget instantly shows how many MVIBE you get.", "Tocá Swap y confirmá": "Tap Swap and confirm", "En segundos MVIBE aparece en tu wallet.": "MVIBE shows up in your wallet in seconds.", "Empezá con poquito": "Start small", "El precio de MVIBE cambia mucho. Comprá solo lo que estés dispuesto a perder.": "MVIBE price moves a lot. Only buy what you can afford to lose.", "El widget de compra no cargó aquí.": "The buy widget did not load here.", "Podés comprar igual con estas opciones:": "You can still buy with these options:", "Comprar en Jupiter ↗": "Buy on Jupiter ↗", "Comprar en pump.fun ↗": "Buy on pump.fun ↗"};
+  const EN={"En vivo": "Live", "Precio de MVIBE ahora": "MVIBE price now", "Cargando datos…": "Loading data…", "Precio": "Price", "Cambio 24 h": "24h change", "Capitalización": "Market cap", "Volumen 24 h": "24h volume", "El precio cambia minuto a minuto y puede bajar tanto como subir. Esto no es asesoría financiera. Datos de": "The price changes by the minute and can fall as well as rise. This is not financial advice. Data from", "Dónde pagar": "Where to pay", "Ruta": "Roadmap", "Cómo conseguirla": "How to get it", "Comercios": "Businesses", "$MVIBE · token comunitario en Solana": "$MVIBE · community token on Solana", "Plata con vibra de selva.": "Money with jungle vibes.", "MonkeyVibe nace en Costa Rica para pagar el cafecito, el tour y la tabla de surf con una moneda que se mueve tan rápido como un mono congo entre los árboles.": "MonkeyVibe was born in Costa Rica to pay for your coffee, your tour and your surfboard with a coin that moves as fast as a howler monkey through the treetops.", "Conseguir MVIBE →": "Get MVIBE →", "Ver dónde se usará": "See where it will work", "Contrato:": "Contract:", "Ver en pump.fun ↗": "View on pump.fun ↗", "Copiar": "Copy", "Red": "Network", "Símbolo": "Ticker", "Suministro": "Supply", "1.000.000.000": "1,000,000,000", "Lanzamiento": "Launch", "Proyectos en camino": "Projects on the way", "Dónde vas a poder pagar con MVIBE": "Where you will be able to pay with MVIBE", "Estos son los usos que estamos armando. Cada tarjeta dice en qué etapa va, sin adornos: lo que está en conversación todavía no es un hecho.": "These are the uses we are building. Each card shows its real stage: anything still in talks is not a done deal.", "En conversaciones": "In talks", "Sodas y cafeterías aliadas": "Partner sodas and cafés", "Pagar el casado o el café chorreado escaneando un código QR con Phantom. El comercio recibe al instante.": "Pay for a casado (the classic Tico lunch plate) or a pour-over coffee by scanning a QR code with Phantom. The shop gets paid instantly.", "Ej: casado + fresco · 9.500 MVIBE*": "E.g. casado + fresh juice · 9,500 MVIBE*", "En diseño": "In design", "Tours para ver monos": "Monkey-watching tours", "Guías locales en zonas como Manuel Antonio, Cahuita y Tortuguero cobrando tours de avistamiento en MVIBE, con descuento para holders.": "Local guides in places like Manuel Antonio, Cahuita and Tortuguero charging for wildlife tours in MVIBE, with discounts for holders.", "Meta: 3 guías piloto en el primer año": "Goal: 3 pilot guides in year one", "Surf y hospedaje": "Surf and stays", "Hostales y escuelas de surf en la costa del Pacífico aceptando MVIBE para clases, alquiler de tablas y noches.": "Hostels and surf schools on the Pacific coast accepting MVIBE for lessons, board rentals and nights.", "Zonas: Santa Teresa · Nosara · Dominical": "Areas: Santa Teresa · Nosara · Dominical", "Tienda MonkeyVibe": "MonkeyVibe Shop", "Camisetas, stickers y gorras con arte de carreta y monos, que solo se compran con MVIBE. Hechas por artistas ticos.": "T-shirts, stickers and caps with oxcart art and monkeys, sold only for MVIBE. Made by Costa Rican artists.", "Primer drop: 100 camisetas numeradas": "First drop: 100 numbered tees", "Cobro fácil para negocios": "Easy payments for businesses", "Una app sencilla para que cualquier pulpería o feria genere su QR de cobro en MVIBE, basada en Solana Pay. Sin terminal, solo el celular.": "A simple app so any corner store or farmers market can create its own MVIBE payment QR, built on Solana Pay. No terminal, just a phone.", "Comisión de red: fracciones de centavo": "Network fee: fractions of a cent", "Compromiso": "Commitment", "Fondo Mono Verde": "Green Monkey Fund", "Parte de las comisiones de creador irá a proyectos que instalan puentes de dosel para que los monos crucen calles y cables sin peligro. La organización aliada se anunciará públicamente.": "Part of the creator fees will go to projects that build canopy bridges so monkeys can cross roads and power lines safely. The partner organization will be announced publicly.", "Cada aporte se publica con su transacción": "Every donation is published with its transaction", "*Montos ilustrativos. El precio real de MVIBE lo define el mercado y puede cambiar mucho.": "*Illustrative amounts. The real price of MVIBE is set by the market and can change a lot.", "Hoja de ruta": "Roadmap", "El sendero, paso a paso": "The trail, step by step", "Fechas estimadas. Avanzamos al siguiente tramo cuando el anterior funciona de verdad, no antes.": "Estimated dates. We move to the next stretch only when the previous one truly works.", "MVIBE sale en pump.fun sobre Solana": "MVIBE launches on pump.fun on Solana", "Logo y nombre visibles en Phantom": "Logo and name visible in Phantom", "Tropa": "Troop", "Concursos de memes y arte de carreta": "Meme and oxcart-art contests", "Primer drop de la tienda MonkeyVibe": "First MonkeyVibe Shop drop", "Anuncio de la organización del Fondo Mono Verde": "Green Monkey Fund partner announced", "Primeros comercios": "First businesses", "Piloto con sodas y cafeterías aliadas": "Pilot with partner sodas and cafés", "Tours de avistamiento con guías locales": "Wildlife tours with local guides", "2027 en adelante": "2027 and beyond", "Cobro para todos": "Payments for everyone", "App de cobro con QR para pequeños negocios": "QR payment app for small businesses", "Expansión a surf y hospedaje en la costa": "Expansion to surf and coastal stays", "Todo desde el celular. Nadie del equipo te va a pedir tu frase secreta, nunca.": "All from your phone. Nobody on the team will ever ask for your secret phrase.", "Instalá Phantom": "Install Phantom", "Creá la wallet y guardá tus 12 palabras en papel, lejos del celular.": "Create your wallet and write your 12 words on paper, away from your phone.", "Cargá SOL": "Add SOL", "Verificá siempre la dirección del contrato en esta página o en nuestros canales oficiales. Hay copias falsas de casi cualquier token.": "Always check the contract address on this page or our official channels. Fake copies exist for almost every token.", "Para negocios": "For businesses", "¿Tenés una soda, un tour o un hostal?": "Run a soda, a tour or a hostel?", "Ejemplo de cobro": "Sample payment", "Mesa 4": "Table 4", "Casado de pollo": "Chicken casado", "Fresco de cas": "Cas fruit juice", "9.500 MVIBE": "9,500 MVIBE", "Recibo ilustrativo de cómo se verá un cobro.": "Illustrative receipt of what a payment will look like.", "Hecho en Costa Rica, con café y paciencia. Pura vida.": "Made in Costa Rica with coffee and patience. Pura vida.", "MVIBE es un token meme comunitario. No representa acciones ni derecho a ganancias, y su precio puede subir o bajar a cero. Esto no es asesoría financiera.": "MVIBE is a community meme token. It is not equity and gives no right to profits, and its price can rise or fall to zero. This is not financial advice.", "Copiado": "Copied", "Cuatro pasos y ya tenés MVIBE": "Four steps and you own MVIBE", "Abrí Swap": "Open Swap", "En Phantom tocá Swap, pegá el contrato oficial de MVIBE y elegí cuánto SOL cambiar.": "In Phantom tap Swap, paste the official MVIBE contract and choose how much SOL to swap.", "Confirmá": "Confirm", "Revisá el monto, confirmá y MVIBE aparece en tu Phantom en segundos.": "Check the amount, confirm, and MVIBE shows up in your Phantom in seconds.", "Comprar con Phantom →": "Buy with Phantom →", "Cómo comprar": "How to buy", "Atajo": "Shortcut", "Comprá en un toque": "Buy in one tap", "Desde el celular, este botón abre Phantom directo en la página de MVIBE. Desde la computadora, escaneá el código con la cámara del celular.": "On your phone, this button opens Phantom right on the MVIBE page. On a computer, scan the code with your phone camera.", "Abrir en Phantom": "Open in Phantom", "Copiar contrato": "Copy contract", "Descargar QR": "Download QR", "Canales de comunidad en redes sociales": "Community channels on social media", "Elaborado por": "Made by", "En Phantom tocá Comprar y pagá con tarjeta. En Costa Rica también podés usar": "In Phantom tap Buy and pay by card. In Costa Rica you can also use", "con SINPE Móvil.": "with SINPE Móvil.", "Comprar con Binance Wallet ↗": "Buy with Binance Wallet ↗", "¿Ya usás Binance? En la app entrá a": "Already on Binance? In the app open", "Binance Wallet": "Binance Wallet", ", pegá el contrato de MVIBE en el buscador y comprá directo. Verificá que el contrato termine en": ", paste the MVIBE contract in the search bar and buy directly. Check that the contract ends in", "Cobrar": "Get paid", "Generar un cobro con QR →": "Create a QR payment request →", "Gastá tu MVIBE": "Spend your MVIBE", "Pagá con tarjeta donde aceptan Visa": "Pay by card wherever Visa is accepted", "Ninguna tarjeta gasta MVIBE directo todavía. Lo cambiás a USDC y recargás una tarjeta cripto virtual.": "No card spends MVIBE directly yet. Swap it to USDC and top up a virtual crypto card.", "Cambiá a USDC": "Swap to USDC", "En tu wallet tocá Swap y cambiá MVIBE por USDC en la red Solana.": "In your wallet tap Swap and change MVIBE to USDC on the Solana network.", "Abrí tu tarjeta": "Open your card", "Creá una tarjeta virtual en una app cripto disponible en Costa Rica, como": "Create a virtual card in a crypto app available in Costa Rica, such as", "o": "or", "Recargá": "Top up", "Enviá USDC desde tu wallet a la dirección de depósito de la tarjeta, siempre por la red Solana.": "Send USDC from your wallet to the card deposit address, always on the Solana network.", "Pagá": "Pay", "Agregala a Apple Pay o Google Pay y pagá con el celular.": "Add it to Apple Pay or Google Pay and pay with your phone.", "Las tarjetas son de empresas externas a MonkeyVibe: revisá disponibilidad, comisiones y requisitos en cada app. Probá primero con un monto pequeño.": "Cards are offered by companies outside MonkeyVibe: check availability, fees and requirements in each app. Try a small amount first.", "Comprar": "Buy", "Comprar MVIBE aquí →": "Buy MVIBE here →", "Compra directa": "Direct purchase", "Comprá MVIBE aquí mismo": "Buy MVIBE right here", "Conectá tu wallet, elegí cuánto SOL usar y listo. La compra se hace directo desde tu wallet: esta página nunca guarda tu dinero.": "Connect your wallet, choose how much SOL to use and you are done. The purchase happens straight from your wallet: this page never holds your money.", "Conectá tu wallet": "Connect your wallet", "Phantom, Solflare u otra wallet de Solana. Desde el celular, abrí esta página dentro del navegador de tu wallet.": "Phantom, Solflare or another Solana wallet. On your phone, open this page inside your wallet browser.", "Escribí cuánto SOL usar": "Enter how much SOL to use", "El widget te muestra al instante cuántos MVIBE recibís.": "The widget instantly shows how many MVIBE you get.", "Tocá Swap y confirmá": "Tap Swap and confirm", "En segundos MVIBE aparece en tu wallet.": "MVIBE shows up in your wallet in seconds.", "Empezá con poquito": "Start small", "El precio de MVIBE cambia mucho. Comprá solo lo que estés dispuesto a perder.": "MVIBE price moves a lot. Only buy what you can afford to lose.", "El widget de compra no cargó aquí.": "The buy widget did not load here.", "Podés comprar igual con estas opciones:": "You can still buy with these options:", "Comprar en Jupiter ↗": "Buy on Jupiter ↗", "Comprar en pump.fun ↗": "Buy on pump.fun ↗", "Nosotros": "About us", "Menú": "Menu", "Sobre nosotros": "About us", "Una moneda con alma de selva": "A coin with a jungle soul", "MonkeyVibe es un proyecto pequeño, hecho en Costa Rica, con una idea grande: que la tecnología también sirva para cuidar lo que hace único a este país.": "MonkeyVibe is a small project made in Costa Rica with a big idea: that technology can also help protect what makes this country unique.", "Cómo nació MonkeyVibe": "How MonkeyVibe was born", "En Costa Rica es normal ver una tropa de monos cruzando por los cables de luz para llegar al otro lado de la calle. Es una escena linda, pero también peligrosa: muchos no lo logran.": "In Costa Rica it is common to see a troop of monkeys crossing the power lines to reach the other side of the road. It is a beautiful sight, but also a dangerous one: many do not make it.", "Al mismo tiempo, miles de turistas y ticos pagan todos los días en sodas, tours y escuelas de surf, y muchos pequeños negocios todavía no tienen datáfono ni formas modernas de cobrar.": "At the same time, thousands of tourists and locals pay every day at sodas, tours and surf schools, and many small businesses still have no card terminal or modern way to get paid.", "En octubre de 2026 juntamos esas dos ideas. Así nació MonkeyVibe: una moneda comunitaria sobre Solana para pagar con buena vibra, y Douglas, nuestro mono de lentes y corona, como su cara. Detrás de cada MVIBE hay una promesa simple: que una parte de lo que genera el proyecto ayude a construir puentes para que los monos crucen seguros.": "In October 2026 we brought those two ideas together. That is how MonkeyVibe was born: a community coin on Solana to pay with good vibes, with Douglas, our monkey with sunglasses and a crown, as its face. Behind every MVIBE there is a simple promise: part of what the project generates helps build bridges so monkeys can cross safely.", "Misión": "Mission", "Que pagar con cripto en Costa Rica sea tan fácil como un SINPE, y que cada pago deje algo bueno para la fauna y los negocios locales.": "Make paying with crypto in Costa Rica as easy as a SINPE transfer, with every payment leaving something good for wildlife and local businesses.", "Objetivo": "Goal", "Para 2027, tener comercios aliados cobrando con MVIBE, guías de tours locales en la red y la primera donación pública del Fondo Mono Verde.": "By 2027, have partner businesses accepting MVIBE, local tour guides on the network and the first public donation from the Green Monkey Fund.", "Valores": "Values", "Transparencia en cada movimiento, comunidad antes que especulación, y mucha Pura Vida.": "Transparency in every transaction, community before speculation, and plenty of Pura Vida.", "Contacto": "Contact", "¿Querés sumarte, aliarte o preguntar algo?": "Want to join, partner up or ask something?", "Escribinos y te respondemos con gusto.": "Write to us and we will gladly reply.", "Copiar correo": "Copy email", "Contacto:": "Contact:", "Buscamos los primeros comercios aliados. Te ayudamos a crear tu wallet y tu QR de cobro, sin costo de instalación. Escribinos a": "We are looking for our first partner businesses. We will help you set up your wallet and payment QR at no setup cost. Write to us at", "y te contactamos.": "and we will get in touch."};
   const nodes=[];
   const w=document.createTreeWalker(document.querySelector('.wrap'),NodeFilter.SHOW_TEXT);
   let n;while(n=w.nextNode()){const k=n.nodeValue.replace(/\s+/g,' ').trim();if(EN[k])nodes.push([n,n.nodeValue,n.nodeValue.replace(k,EN[k])])}
@@ -644,6 +799,18 @@ navigator.clipboard.writeText(CA).then(done,()=>{const c=document.getElementById
     }catch(e){fb();return true}
   }
   var tries=0;var iv=setInterval(function(){if(start()||++tries>40){clearInterval(iv);if(!done)fb();}},250);
+})();
+</script>
+
+<script>
+(function(){
+  const nav=document.querySelector('nav');const b=document.getElementById('burger');
+  if(b&&nav){b.addEventListener('click',()=>{const o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
+    nav.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');b.setAttribute('aria-expanded','false')}));
+    document.addEventListener('click',e=>{if(!nav.contains(e.target)){nav.classList.remove('open');b.setAttribute('aria-expanded','false')}});}
+  const c=document.getElementById('copymail');
+  if(c)c.addEventListener('click',()=>{const t='hello@monkeyvibecr.com';const ok=()=>{c.textContent=document.documentElement.lang==='en'?'Copied':'Copiado'};
+    navigator.clipboard.writeText(t).then(ok,()=>{const r=document.createRange();r.selectNodeContents(document.querySelector('.mailaddr'));const s=getSelection();s.removeAllRanges();s.addRange(r)})});
 })();
 </script>
 </body></html>
