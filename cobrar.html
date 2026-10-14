@@ -70,6 +70,36 @@
     </section>
   </div>
 
+  <section class="panel rotulo" id="rotulo" aria-labelledby="rot-title">
+    <p class="eyebrow">Para tu local</p>
+    <h2 id="rot-title">Rótulo «Aquí aceptamos MVIBE»</h2>
+    <p class="hint big">Imprimilo y pegalo en la caja. Su QR no lleva monto: el cliente lo escanea, escribe cuánto paga y el pago llega a tu wallet. Sirve para siempre.</p>
+    <div class="rot-grid">
+      <form id="rot-form" novalidate>
+        <label for="rot-wallet">Tu dirección de wallet (Solana)</label>
+        <input id="rot-wallet" name="wallet" placeholder="Ej: 7xKX…9fQp" spellcheck="false" autocapitalize="off" autocomplete="off" maxlength="44" required>
+        <label for="rot-place">Ubicación (opcional)</label>
+        <input id="rot-place" name="place" maxlength="26" placeholder="Ej: Manuel Antonio">
+        <p class="hint">Se imprime como «MANUEL ANTONIO, COSTA RICA». Si lo dejás vacío dice «COSTA RICA».</p>
+        <label for="rot-lang">Idioma del rótulo</label>
+        <select id="rot-lang" name="lang">
+          <option value="es">Español</option>
+          <option value="en">English (para turistas)</option>
+        </select>
+        <div class="actions"><button class="btn main" type="submit">Crear rótulo</button></div>
+        <p class="err" id="rot-err" role="alert"></p>
+      </form>
+      <div class="rot-out">
+        <div class="rot-preview" id="rot-preview"><p class="empty">Aquí aparece tu rótulo.</p></div>
+        <div class="actions center" id="rot-actions" hidden>
+          <a class="btn main" id="rot-dl" href="#" download="rotulo-mvibe.png">Descargar imagen</a>
+          <button class="btn" type="button" id="rot-print">Imprimir</button>
+        </div>
+        <p class="hint center" id="rot-tip" hidden>Antes de pegarlo, hacé una prueba: escanealo con tu celular y mandá un pago pequeñito.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="steps">
     <p class="eyebrow">Cómo funciona</p>
     <ol>

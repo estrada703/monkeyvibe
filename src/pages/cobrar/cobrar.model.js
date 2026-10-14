@@ -32,3 +32,15 @@ export function buildPayment({ wallet, amount, currency, rate, priceUsd, concept
   const query = Object.entries(q).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
   return { url: `solana:${wallet}?${query}`, mvibe, usd, message };
 }
+
+/**
+ * QR fijo para el rótulo del local: sin monto, así el cliente escribe cuánto paga.
+ * Se deja corto a propósito (QR más simple = se escanea más fácil impreso).
+ */
+export function buildOpenRequest(wallet) {
+  if (!isWallet(wallet)) throw new Error('wallet');
+  return `solana:${wallet}?spl-token=${CONFIG.mint}&label=MonkeyVibe`;
+}
+
+/** Ubicación para el rótulo: texto simple y corto. */
+export const cleanPlace = (v) => cleanConcept(v).replace(/[#:()]/g, '').slice(0, 26).trim();
