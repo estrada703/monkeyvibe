@@ -1,0 +1,16 @@
+.ruta{display:grid}
+.paso{display:grid;grid-template-columns:150px 28px 1fr;gap:20px;padding-bottom:36px}
+.paso>*{min-width:0}
+.paso .when{font-family:var(--f-mono);font-size:.85rem;color:var(--ink-soft);text-align:right;padding-top:4px}
+.paso .dot{position:relative;display:flex;justify-content:center}
+.paso .dot::before{content:"";position:absolute;top:10px;bottom:-36px;width:2px;background:var(--line)}
+.paso:last-child .dot::before{display:none}
+.paso .dot span{position:relative;width:18px;height:18px;border-radius:50%;background:var(--bg);border:3px solid var(--ink-soft);margin-top:4px}
+.paso.now .dot span{background:var(--amarillo);border-color:var(--amarillo);box-shadow:0 0 0 6px color-mix(in srgb,var(--amarillo) 25%,transparent)}
+.paso h3{font-size:1.15rem;font-weight:700}
+.paso ul{margin:10px 0 0;padding-left:18px;color:var(--ink-soft)}
+@media (max-width:600px){
+  .paso{grid-template-columns:22px 1fr;gap:14px}
+  .paso .when{grid-column:2;text-align:left;padding:0;order:-1}
+  .paso .dot{grid-row:1 / span 2;grid-column:1}
+}
