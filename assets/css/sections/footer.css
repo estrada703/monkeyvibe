@@ -1,7 +1,0 @@
-.footer{border-top:2px solid var(--ink);padding-block:28px 48px;display:grid;grid-template-columns:1fr 1fr;gap:24px;font-size:.9rem;color:var(--ink-soft)}
-.footer>*{min-width:0}
-.footer strong{color:var(--ink)}
-.foot-mail a{color:var(--ink);font-weight:700}
-.credit{grid-column:1 / -1;padding-top:16px;border-top:1px solid var(--line);font-family:var(--f-mono);font-size:.8rem;letter-spacing:.04em}
-.credit a{color:var(--ink);font-weight:600}
-@media (max-width:900px){.footer{grid-template-columns:1fr}}

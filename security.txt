@@ -1,4 +1,0 @@
-Contact: mailto:hello@monkeyvibecr.com
-Expires: 2027-10-14T00:00:00.000Z
-Preferred-Languages: es, en
-Canonical: https://monkeyvibecr.com/.well-known/security.txt

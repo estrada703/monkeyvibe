@@ -1,9 +1,0 @@
-/* Fuentes alojadas en el propio sitio: sin depender de Google y compatibles con la política de seguridad. */
-@font-face{font-family:"Unbounded";font-weight:500;font-display:swap;src:url("../fonts/unbounded-latin-500-normal.woff2") format("woff2")}
-@font-face{font-family:"Unbounded";font-weight:700;font-display:swap;src:url("../fonts/unbounded-latin-700-normal.woff2") format("woff2")}
-@font-face{font-family:"Unbounded";font-weight:900;font-display:swap;src:url("../fonts/unbounded-latin-900-normal.woff2") format("woff2")}
-@font-face{font-family:"Figtree";font-weight:400;font-display:swap;src:url("../fonts/figtree-latin-400-normal.woff2") format("woff2")}
-@font-face{font-family:"Figtree";font-weight:500;font-display:swap;src:url("../fonts/figtree-latin-500-normal.woff2") format("woff2")}
-@font-face{font-family:"Figtree";font-weight:700;font-display:swap;src:url("../fonts/figtree-latin-700-normal.woff2") format("woff2")}
-@font-face{font-family:"JetBrains Mono";font-weight:400;font-display:swap;src:url("../fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2")}
-@font-face{font-family:"JetBrains Mono";font-weight:600;font-display:swap;src:url("../fonts/jetbrains-mono-latin-600-normal.woff2") format("woff2")}
