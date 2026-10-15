@@ -10,6 +10,7 @@ import { comprarView } from '../views/comprar.view.js';
 import { precioView, updatePrecio } from '../views/precio.view.js';
 import { usosView } from '../views/usos.view.js';
 import { rutaView } from '../views/ruta.view.js';
+import { avancesView } from '../views/avances.view.js';
 import { comoView } from '../views/como.view.js';
 import { tarjetaView } from '../views/tarjeta.view.js';
 import { comerciosView } from '../views/comercios.view.js';
@@ -21,7 +22,7 @@ import { mountWheel } from './wheel.controller.js';
 import { mountSwap } from './swap.controller.js';
 import { applyChart } from './market.controller.js';
 
-const SECTIONS = [navView, heroView, comprarView, precioView, transparenciaView, usosView, rutaView, comoView, tarjetaView, comerciosView, nosotrosView, faqView, footerView];
+const SECTIONS = [navView, heroView, comprarView, precioView, transparenciaView, usosView, avancesView, rutaView, comoView, tarjetaView, comerciosView, nosotrosView, faqView, footerView];
 
 export function createApp(root, store) {
   function render() {

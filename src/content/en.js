@@ -9,8 +9,8 @@ export default {
   },
   nav: {
     home: 'MonkeyVibe home', menu: 'Menu', langBtn: 'ES', langAria: 'Cambiar a español',
-    items: [['#comprar', 'Buy'], ['#usos', 'Where to pay'], ['#transparencia', 'Transparency'], ['#como', 'How to get it'],
-      ['#comercios', 'Businesses'], [L.cobrar, 'Get paid'], ['#nosotros', 'About us'], ['#faq', 'FAQ']],
+    items: [['#comprar', 'Buy'], ['#usos', 'Where to pay'], ['#transparencia', 'Transparency'], 
+      ['#comercios', 'Businesses'], [L.cobrar, 'Get paid'], ['#avances', 'Progress'], ['/whitepaper', 'Whitepaper'], ['#nosotros', 'About us'], ['#faq', 'FAQ']],
   },
   hero: {
     eyebrow: '$MVIBE · community token on Solana',
@@ -118,7 +118,7 @@ export default {
   footer: {
     name: 'MonkeyVibe ($MVIBE)', made: 'Made in Costa Rica with coffee and patience. Pura vida.', contact: 'Contact:',
     legal: 'MVIBE is a community meme token. It is not equity and gives no right to profits, and its price can rise or fall to zero. This is not financial advice.',
-    credit: 'Made by',
+    credit: 'Made by', whitepaper: 'Whitepaper', avances: 'Progress', social: 'Follow us:',
   },
   transparencia: {
     eyebrow: 'Transparency', title: 'Everything in plain sight, on the blockchain',
@@ -140,6 +140,13 @@ export default {
     donationsTitle: 'Green Monkey Fund history',
     donationsEmpty: 'No donations yet. The first one will be published here with its transaction and the organization receipt.',
     cols: ['Date', 'Organization', 'Amount', 'Transaction'], txLink: 'View ↗',
+  },
+  avances: {
+    eyebrow: 'Progress', title: 'What we have done and what comes next',
+    intro: 'Our public log. We update it every time something moves forward, so you can watch the project grow step by step.',
+    status: { done: 'Done', progress: 'In progress', next: 'Up next' },
+    countDone: 'milestones done', countProgress: 'in progress', see: 'See →',
+    note: 'Full project details are in the', whitepaper: 'Whitepaper →',
   },
   faq: {
     eyebrow: 'FAQ', title: 'What everyone asks',

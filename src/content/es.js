@@ -9,8 +9,8 @@ export default {
   },
   nav: {
     home: 'MonkeyVibe inicio', menu: 'Menú', langBtn: 'EN', langAria: 'Switch to English',
-    items: [['#comprar', 'Comprar'], ['#usos', 'Dónde pagar'], ['#transparencia', 'Transparencia'], ['#como', 'Cómo conseguirla'],
-      ['#comercios', 'Comercios'], [L.cobrar, 'Cobrar'], ['#nosotros', 'Nosotros'], ['#faq', 'Preguntas']],
+    items: [['#comprar', 'Comprar'], ['#usos', 'Dónde pagar'], ['#transparencia', 'Transparencia'], 
+      ['#comercios', 'Comercios'], [L.cobrar, 'Cobrar'], ['#avances', 'Avances'], ['/whitepaper', 'Whitepaper'], ['#nosotros', 'Nosotros'], ['#faq', 'Preguntas']],
   },
   hero: {
     eyebrow: '$MVIBE · token comunitario en Solana',
@@ -118,7 +118,7 @@ export default {
   footer: {
     name: 'MonkeyVibe ($MVIBE)', made: 'Hecho en Costa Rica, con café y paciencia. Pura vida.', contact: 'Contacto:',
     legal: 'MVIBE es un token meme comunitario. No representa acciones ni derecho a ganancias, y su precio puede subir o bajar a cero. Esto no es asesoría financiera.',
-    credit: 'Elaborado por',
+    credit: 'Elaborado por', whitepaper: 'Whitepaper', avances: 'Avances', social: 'Seguinos:',
   },
   transparencia: {
     eyebrow: 'Transparencia', title: 'Todo a la vista, en la blockchain',
@@ -140,6 +140,13 @@ export default {
     donationsTitle: 'Historial del Fondo Mono Verde',
     donationsEmpty: 'Todavía no hay donaciones. La primera se publicará aquí con su transacción y el comprobante de la organización.',
     cols: ['Fecha', 'Organización', 'Monto', 'Transacción'], txLink: 'Ver ↗',
+  },
+  avances: {
+    eyebrow: 'Avances', title: 'Lo que ya hicimos y lo que viene',
+    intro: 'Nuestra bitácora pública. La actualizamos cada vez que algo avanza, para que veas el proyecto crecer paso a paso.',
+    status: { done: 'Hecho', progress: 'En proceso', next: 'Lo que sigue' },
+    countDone: 'avances hechos', countProgress: 'en proceso', see: 'Ver →',
+    note: 'Los detalles completos del proyecto están en el', whitepaper: 'Whitepaper →',
   },
   faq: {
     eyebrow: 'Preguntas frecuentes', title: 'Lo que todos preguntan',

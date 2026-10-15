@@ -1,7 +1,7 @@
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:700;font-size:1.05rem;text-decoration:none}
 .brand img{width:44px;height:44px}
-.navlinks{display:flex;gap:22px;flex-wrap:wrap;font-weight:500;font-size:.95rem}
+.navlinks{display:flex;gap:18px;flex-wrap:wrap;font-weight:500;font-size:.95rem}
 .navlinks a{text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}
 .navlinks a:hover{border-color:var(--amarillo)}
 .lang{font:700 .8rem var(--f-mono);letter-spacing:.08em;padding:8px 14px;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer}

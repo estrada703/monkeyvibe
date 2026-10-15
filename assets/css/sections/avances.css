@@ -1,0 +1,25 @@
+#avances{margin-bottom:96px}
+.av-count{font-family:var(--f-mono);font-size:.85rem;color:var(--ink-soft);margin:-8px 0 22px}
+.av-count b{color:var(--ink);font-size:1rem}
+.av-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+.av-group{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px}
+.av-gtitle{display:flex;align-items:center;gap:10px;font-size:1rem;font-weight:700;margin:0 0 14px;font-family:var(--f-display)}
+.av-ico{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto}
+.av-ico svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.av-group[data-status="done"] .av-ico{background:var(--verde);color:var(--bg)}
+.av-group[data-status="progress"] .av-ico{background:var(--amarillo);color:#10251F}
+.av-group[data-status="next"] .av-ico{border:2px solid var(--ink-soft);color:var(--ink-soft)}
+.av-group[data-status="progress"]{border-color:color-mix(in srgb,var(--amarillo) 60%,var(--line))}
+.av-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.av-item{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.av-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.av-top b{font-size:.98rem;line-height:1.3}
+.av-date{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-soft);white-space:nowrap}
+.av-item p{margin:6px 0 0;font-size:.9rem;color:var(--ink-soft);line-height:1.5}
+.av-item .av-link{margin-top:6px;font-size:.85rem}
+.av-item .av-link a{font-weight:700}
+.av-group[data-status="progress"] .av-item{border-color:color-mix(in srgb,var(--amarillo) 45%,var(--line))}
+.av-note{margin-top:16px;font-size:.9rem;color:var(--ink-soft)}
+.av-note a{font-weight:700}
+@media (max-width:980px){.av-groups{grid-template-columns:1fr 1fr}.av-group[data-status="next"]{grid-column:1 / -1}}
+@media (max-width:640px){.av-groups{grid-template-columns:1fr}#avances{margin-bottom:72px}}
